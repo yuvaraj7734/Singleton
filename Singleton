@@ -1,0 +1,23 @@
+public class MySinglton { 
+
+  private MySinglton (){}
+
+  private static volatile MySinglton s;
+
+  public static MySinglton getInstance(){
+
+   if (s != null ) return s;
+
+    synchronized(MySinglton.class){
+
+     if (s == null ) {
+
+      s = new MySinglton();
+     }
+  }
+
+  return s;
+
+}
+
+} 
